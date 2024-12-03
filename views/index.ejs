@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Usuários</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <!-- Cabeçalho da página -->
+      <div class="row">
+        <h2>NODE - CRUD <span class="badge text-bg-secondary"> v1.0.0</span></h2>
+      </div>
+    </div>
+    <div class="row">
+      <p><a class="btn btn-success" href="/add">Adicionar</a></p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NOME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">AÇÃO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td>
+              <a class="btn btn-primary" href="/edit/<%= user.id %>">Editar</a>
+              <a class="btn btn-danger" href="/delete/<%= user.id %>">Excluir</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

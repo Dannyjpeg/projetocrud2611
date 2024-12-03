@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Usuário</title>
+</head>
+<body>
+  <div class="container">
+    <div class="span10 offset1">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="well">Atualizar Contato</h3>
+        </div>
+        <form class="form-horizontal" action="/edit/<%= user.id %>" method="POST">
+          <div class="card-body">
+            <label class="control-label" for="name">Nome:</label>
+            <input class="form-control" type="text" name="name" id="name" value="<%= user.name %>" required>
+            <br>
+            <label class="control-label" for="email">Email:</label>
+            <input class="form-control" type="email" name="email" id="email" value="<%= user.email %>" required>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-warning" type="submit">Atualizar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
